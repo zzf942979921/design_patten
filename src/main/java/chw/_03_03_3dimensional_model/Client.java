@@ -12,12 +12,16 @@ import java.util.List;
 public class Client {
     public static void main(String[] args) {
 //        BenzModel benz = new BenzModel();
-        BMWModel bmw = new BMWModel();
+//        BMWModel bmw = new BMWModel();
         List<String> sequence = new ArrayList<>();
         sequence.add("engine boom");
         sequence.add("start");
         sequence.add("stop");
-        bmw.setSequence(sequence);
-        bmw.run();
+//        bmw.setSequence(sequence);
+//        bmw.run();
+        BenzBuilder benzBuilder = new BenzBuilder();
+        benzBuilder.setSequence(sequence);
+        BenzModel benz = ((BenzModel) benzBuilder.getCarModel());
+        benz.run();
     }
 }
