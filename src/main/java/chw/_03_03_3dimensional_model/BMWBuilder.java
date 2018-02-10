@@ -7,7 +7,7 @@ public class BMWBuilder extends CarBuilder {
     private BMWModel bmw = new BMWModel();
 
     @Override
-    public void setSequence(List<String> sequence) {
+    public void setSequence(List<CarDoType> sequence) {
         bmw.setSequence(sequence);
     }
 

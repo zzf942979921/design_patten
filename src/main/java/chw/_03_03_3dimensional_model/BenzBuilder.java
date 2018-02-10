@@ -6,7 +6,7 @@ public class BenzBuilder extends CarBuilder {
     private BenzModel benz = new BenzModel();
 
     @Override
-    public void setSequence(List<String> sequence) {
+    public void setSequence(List<CarDoType> sequence) {
         benz.setSequence(sequence);
     }
 

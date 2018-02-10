@@ -10,7 +10,7 @@ import java.util.List;
  * @Modified:
  */
 public abstract class CarModel {
-    private List<String> sequence = new ArrayList<>();//此参数是各个方法执行的顺序
+    private List<CarDoType> sequence = new ArrayList<>();//此参数是各个方法执行的顺序
 
     /**
      * 启动
@@ -33,20 +33,20 @@ public abstract class CarModel {
     protected abstract void engineBoom();
 
     final public void run() {
-        for (String item : this.sequence) {
-            if (item.equalsIgnoreCase("start")) {
+        for (CarDoType item : this.sequence) {
+            if (item.equals(CarDoType.start)) {
                 this.start();
-            } else if (item.equalsIgnoreCase("stop")) {
+            } else if (item.equals(CarDoType.stop)) {
                 this.stop();
-            } else if (item.equalsIgnoreCase("alarm")) {
+            } else if (item.equals(CarDoType.alarm)) {
                 this.alarm();
-            } else if (item.equalsIgnoreCase("engine boom")) {
+            } else if (item.equals(CarDoType.engine_boom)) {
                 this.engineBoom();
             }
         }
     }
 
-    final public void setSequence(List<String> sequence) {
+    final public void setSequence(List<CarDoType> sequence) {
         this.sequence = sequence;
     }
 
